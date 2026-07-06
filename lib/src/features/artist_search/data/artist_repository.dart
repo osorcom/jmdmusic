@@ -1,5 +1,5 @@
 import '../domain/artist.dart';
-import 'jamendo_api_client.dart';
+import '../../../core/network/jamendo_api_client.dart';
 
 class ArtistRepository {
   final JamendoApiClient _apiClient;

@@ -1,5 +1,5 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import '../data/jamendo_api_client.dart';
+import '../../../core/network/jamendo_api_client.dart';
 import '../data/artist_repository.dart';
 
 part 'providers.g.dart';
