@@ -1,6 +1,6 @@
+import 'package:jmdmusic/src/features/artist_search/data/artist_repository.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:jmdmusic/src/features/artist_search/domain/artist.dart';
-import 'package:jmdmusic/src/features/artist_search/shared/providers.dart';
 
 part 'artist_search_view_model.g.dart';
 

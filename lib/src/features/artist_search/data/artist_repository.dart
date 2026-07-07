@@ -1,5 +1,9 @@
+import 'package:riverpod_annotation/riverpod_annotation.dart';
+
 import '../domain/artist.dart';
 import '../../../core/network/jamendo_api_client.dart';
+
+part 'artist_repository.g.dart';
 
 class ArtistRepository {
   final JamendoApiClient _apiClient;
@@ -10,4 +14,10 @@ class ArtistRepository {
     final rawResults = await _apiClient.searchArtists(query);
     return rawResults.map((json) => Artist.fromJson(json)).toList();
   }
+}
+
+@riverpod
+ArtistRepository artistRepository(Ref ref) {
+  final apiClient = ref.watch(jamendoApiClientProvider);
+  return ArtistRepository(apiClient);
 }

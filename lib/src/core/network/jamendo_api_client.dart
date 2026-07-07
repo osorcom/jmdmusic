@@ -1,4 +1,7 @@
 import 'package:dio/dio.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
+
+part 'jamendo_api_client.g.dart';
 
 class JamendoApiClient {
   final Dio _dio = Dio(BaseOptions(baseUrl: 'https://api.jamendo.com/v3.0'));
@@ -28,4 +31,9 @@ class JamendoApiClient {
       throw Exception('Error en connectar amb Jamendo API');
     }
   }
+}
+
+@riverpod
+JamendoApiClient jamendoApiClient(Ref ref) {
+  return JamendoApiClient();
 }
