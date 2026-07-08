@@ -31,6 +31,47 @@ class JamendoApiClient {
       throw Exception('Error en connectar amb Jamendo API');
     }
   }
+
+  Future<List<dynamic>> searchArtistAlbums(String artistId) async {
+    if (artistId.isEmpty) return [];
+
+    final response = await _dio.get(
+      '/albums',
+      queryParameters: {
+        'client_id': _clientId,
+        'format': 'jsonpretty',
+        'artist_id': artistId,
+        'order': 'releasedate_desc', // Mostra primer els àlbums més recents
+      },
+    );
+
+    if (response.statusCode == 200) {
+      return response.data['results'] ?? [];
+    } else {
+      throw Exception('Error en carregar els àlbums de l\'artista de Jamendo');
+    }
+  }
+
+  Future<List<dynamic>> searchArtistTracks(String artistId) async {
+    if (artistId.isEmpty) return [];
+
+    final response = await _dio.get(
+      '/tracks',
+      queryParameters: {
+        'client_id': _clientId,
+        'format': 'jsonpretty',
+        'artist_id': artistId,
+        'order': 'popularity_desc', // Mostra primer les cançons més populars
+        'limit': 15, // Limitem a un top 15 de cançons soltes
+      },
+    );
+
+    if (response.statusCode == 200) {
+      return response.data['results'] ?? [];
+    } else {
+      throw Exception('Error en carregar les cançons de l\'artista de Jamendo');
+    }
+  }
 }
 
 @riverpod
