@@ -61,8 +61,8 @@ class JamendoApiClient {
         'client_id': _clientId,
         'format': 'jsonpretty',
         'artist_id': artistId,
-        'order': 'popularity_desc', // Mostra primer les cançons més populars
-        'limit': 15, // Limitem a un top 15 de cançons soltes
+        'order': 'buzzrate_desc',
+        'limit': 15,
       },
     );
 

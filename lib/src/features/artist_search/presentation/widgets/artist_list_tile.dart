@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jmdmusic/src/features/artist_detail/presentation/artist_detail_screen.dart';
 import '../../domain/artist.dart';
 
 class ArtistListTile extends StatelessWidget {
@@ -55,7 +56,11 @@ class ArtistListTile extends StatelessWidget {
         ),
 
         onTap: () {
-          // Implementa la navegació a la pantalla de detalls de l'artista;
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => ArtistDetailScreen(artist: artist),
+            ),
+          );
         },
       ),
     );
