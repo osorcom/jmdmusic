@@ -94,8 +94,8 @@ class ArtistDetailScreen extends ConsumerWidget {
               final (albums, tracks) = record;
               return TabBarView(
                 children: [
-                  ArtistAlbumsGrid(albums: albums), // <── Molt més net!
-                  ArtistTracksList(tracks: tracks), // <── Molt més net!
+                  ArtistAlbumsGrid(albums: albums),
+                  ArtistTracksList(tracks: tracks),
                 ],
               );
             },
