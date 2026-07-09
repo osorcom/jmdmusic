@@ -2,6 +2,11 @@
 
 Aplicació que cerca artistes a la plataforma Jamendo. Creada dins del curs *"Desenvolupament d'Apps Multiplataforma amb Flutter"*.
 
+## Característiques actuals
+
+1. Cerca d'artistes per nom amb scroll finit.
+2. Mostra informació d'un artista, els seus àlbums i les seves cançons més populars.
+
 ## Configuració Inicial (Setup)
 
 Per poder executar aquest projecte, necessites configurar una clau d'API de Jamendo.
